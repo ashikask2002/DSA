@@ -1,27 +1,3 @@
-// // add the elements to array
-// package main
-
-// import "fmt"
-
-// func main() {
-// 	arr := make([]int, 20)
-// 	fmt.Println("enter the values to array")
-// 	size := 5
-// 	addarray(arr, size)
-// 	displayarray(arr, size)
-// }
-// func addarray(arr []int, size int) {
-// 	for i := 0; i < size; i++ {
-// 		fmt.Scanf("%d", &arr[i])
-// 	}
-// }
-
-// func displayarray(arr []int, size int) {
-// 	fmt.Println("the array is ")
-// 	for i := 0; i < size; i++ {
-// 		fmt.Printf("%d", arr[i])
-// 	}
-// }
 
 package main
 
@@ -33,13 +9,13 @@ func main() {
 	size := 5
 
 	Addarray(arr, size)
-	// insertintOarray(arr,size,2,9)
+	insertintOarray(arr,size,2,9)
 	// Displayarray(arr, size)
 
-	// append(arr, size, 11)
+	//  append(arr, size, 11)
 
 	// deleteindex(arr,size,3)
-	ReverseArray(arr,size)
+	// ReverseArray(arr,size)
 
 	Displayarray(arr, size)
 
@@ -47,29 +23,27 @@ func main() {
 
 // --------add the elements into the array-------
 
-func Addarray(arr []int, size int) {
-	for i := 0; i < size; i++ {
-		fmt.Scanf("%d", &arr[i])
+func Addarray(array []int,size int){
+	for i := 0;i<size;i++{
+		fmt.Scanf("%d",&array[i])
 	}
 }
 
-func Displayarray(arr []int, size int) {
-	fmt.Println("the entered elements are ")
-	for i := 0; i < size; i++ {
-		fmt.Printf("%d\n", arr[i])
+func Displayarray(arr []int,size int){
+	fmt.Println("result is ")
+	for i := 0; i <size; i++{
+      fmt.Printf("%d\n",arr[i])
 	}
 }
 
 // ----- insert into an array-------
 
-func insertintOarray(arr []int, size int, index int, value int) {
-	for j := size; j > index; j-- {
+func insertintOarray(arr []int,size int,index int,element int){
+	for j:= len(arr)-1; j>index; j--{
 		arr[j] = arr[j-1]
 	}
-	arr[index] = value
-
+	arr[index] = element
 }
-
 // ------append-------//
 func append(arr []int, size int, value int) {
 	arr[size-1] = value
