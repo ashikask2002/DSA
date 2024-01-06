@@ -15,3 +15,4 @@ func main() {
 	}
 	fmt.Println("array elements are ", myarray)
 }
+ 
