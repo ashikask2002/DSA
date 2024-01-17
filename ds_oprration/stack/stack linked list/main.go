@@ -40,6 +40,17 @@ func (s *Stack) Display() {
 	}
 }
 
+func (s *Stack) Size() int{
+   return s.size
+}
+
+func(s *Stack) Top(){
+	if s.head == nil{
+		fmt.Println("list is empty")
+	} else {
+		fmt.Println("top  is ",s.head.data)
+	}
+}
 func main(){
 	s := Stack{}
 	s.Push(3)
@@ -49,4 +60,6 @@ func main(){
 	s.Push(34)
 	s.Pop()
 	s.Display()
+	fmt.Println("size of stack is ",s.Size())
+	s.Top()
 }
