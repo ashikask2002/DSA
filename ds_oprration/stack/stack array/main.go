@@ -35,6 +35,6 @@ func (s *Stack) display() {
 
 func (s *Stack) Topelement() {
 	Topelement := s.data[len(s.data)-1]
-	fmt.Println("top element is ",Topelement)
+	fmt.Println("top element is ",Topelement)                   
 }
 
