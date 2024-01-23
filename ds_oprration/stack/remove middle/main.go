@@ -17,9 +17,10 @@ func main() {
 	fmt.Println("array before", l.data)
 	middleIndex := l.size / 2
 	currentIndex := 0
-	l.Removemiddle(middleIndex, currentIndex)
+	mid := l.Removemiddle(middleIndex, currentIndex)
 	fmt.Println("array after",l.data)
-}
+	fmt.Println("middle element is ",mid)
+} 
 
 func (s *Stack) Push(a int) {
 	s.data = append(s.data, a)
