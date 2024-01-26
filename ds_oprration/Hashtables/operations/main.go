@@ -89,7 +89,7 @@ func main() {
 	list := []string{
 		"ERIC",
 		"KENNY",
-		"KYLE",
+		"KYLE",	
 	}
 	for _, v := range list {
 		testHashtable.Insert(v)
