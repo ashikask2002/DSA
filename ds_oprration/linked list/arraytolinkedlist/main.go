@@ -33,7 +33,8 @@ func (l *LinkedList) arraytolinkedList(arr []int) {
 	}
 	temp.next = node
    }
-}}
+}
+}
 
 func(l *LinkedList) display(){
 	temp := l.head
