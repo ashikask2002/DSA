@@ -21,35 +21,68 @@ list.addend(5)
 list.addend(3)
 list.addend(7)
 list.addend(2)
-	 list.displayElements()
+
+//    list.deleteValue(4)
+    
+   list.displayElements()
 
 }
 
-// func (l *LinkedList) addHead(value int) {
-// 	node := &Node{value, nil}
+func(l *LinkedList) addHead(value int){
+	node := &Node{value,nil}
 
-// 	if l.head == nil {
-// 		l.head = node
-
-// 	} else {
-// 		node.next = l.head
-// 		l.head = node
-// 	}
-// }
-
-func (l *LinkedList) addend(value int) {
-	node := &Node{value, nil}
-	temp := l.head
-
-	if temp == nil {
+	if l.head == nil{
 		l.head = node
 	} else {
-		for temp.next != nil {
+		node.next = l.head
+		l.head = node
+	}
+}
+
+//adde the node to linked list at end
+
+
+func(l *LinkedList)addend(value int){
+	node := &Node{value,nil}
+	temp := l.head
+
+	if temp != nil {
+      l.head = node
+	} else {
+		for temp.next != nil{
 			temp = temp.next
 		}
 		temp.next = node
 	}
 }
+
+
+
+func (l *LinkedList) deleteValue(value int){
+	temp := l.head
+  if temp == nil{
+	fmt.Println("list is empty")
+	return
+  } 
+
+  if temp.data == value {
+	l.head = temp.next
+	return
+  }
+
+  for temp.next != nil {
+	if temp.next.data == value{
+		temp.next = temp.next.next
+		return
+	}
+	if temp.next != nil{
+		temp = temp.next
+	}
+  }
+}
+
+
+
 
 func (l *LinkedList) displayElements() {
 	temp := l.head
@@ -63,3 +96,5 @@ func (l *LinkedList) displayElements() {
 		}
 	}
 }
+
+

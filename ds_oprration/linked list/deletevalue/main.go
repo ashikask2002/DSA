@@ -17,10 +17,35 @@ func main() {
 	list.append(3)
 	list.append(5)
 	list.append(9)
-	list.deleteValue(5)
+	 //list.deleteValue(5)
+	list.DeleteHead()
+	//list.DeleteEnd()
 	list.displayElements()
 }
+func (l *LinkedList) deleteValue(value int) {
+	temp := l.head
 
+	if temp == nil {
+		fmt.Println("list is empty ")
+		return
+	}
+
+	if temp.data == value {
+		l.head = temp.next
+		return
+	}
+
+	for temp.next != nil && temp.next.data != value {
+		temp = temp.next
+	}
+
+	if temp.next == nil {
+		fmt.Println("Value not found in the list")
+		return
+	}
+
+	temp.next = temp.next.next
+}
 func (l *LinkedList) append(value int) {
 	node := &Node{value, nil}
 
@@ -30,7 +55,7 @@ func (l *LinkedList) append(value int) {
 	}
 
 	temp := l.head
-	if temp.next != nil {
+	for temp.next != nil {
 		temp = temp.next
 	}
 	temp.next = node
@@ -47,25 +72,30 @@ func (l *LinkedList) displayElements() {
 	}
 }
 
-func(l *LinkedList) deleteValue(value int){
+
+
+func(l *LinkedList) DeleteHead(){
+	if l.head == nil{
+		fmt.Println("no elements")
+	}
+	
+	if l.head !=  nil{
+		l.head = l.head.next
+	}
+}
+
+func(l *LinkedList) DeleteEnd(){
+	if l.head == nil {
+		fmt.Println("list is empty")
+		return
+	} 
+	 if l.head.next == nil{
+		return
+	}
 	temp := l.head
-
-	if temp == nil {
-		fmt.Println("list is empty ")
-		return
-	}
-	if temp.data == value{
-		temp = temp.next
-		return
-	}
-
-	for temp.next.data == value{
-		temp.next = temp.next.next
-		return
-	}
-    if temp.next != nil {
-		temp = temp.next
-	}
-
-
+		for temp.next.next != nil{
+			temp = temp.next
+		}
+		temp.next = nil
+	
 }

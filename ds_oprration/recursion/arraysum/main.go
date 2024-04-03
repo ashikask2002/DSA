@@ -3,15 +3,17 @@ package main
 import "fmt"
 
 func main() {
-	arr := []int{1, 4, 3, 7, 5, 9}
+	arr := []int{2, 3, 5, 4, 1}
 	index := 0
-	result := recursion(arr, index)
-	fmt.Printf("result is %d", result)
+	result := Recursion(arr, index)
+	fmt.Println("sum of array is", result)
+
 }
 
-func recursion(arr []int, index int) int {
+func Recursion(arr []int, index int) int {
 	if index == len(arr) {
 		return 0
 	}
-	return arr[index] + recursion(arr, index+1)
+
+	return arr[index] + Recursion(arr, index+1)
 }

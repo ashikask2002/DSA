@@ -1,4 +1,4 @@
-package main
+ package main
 
 import "fmt"
 
@@ -9,13 +9,13 @@ type Stack struct {
 
 func main() {
 	l := &Stack{}
-	l.Push(3)
+	l.Push(8)
 	l.Push(2)
 	l.Push(6)
-	l.Push(1)
-	l.Push(8)
+	l.Push(2)
+	l.Push(5)
 	fmt.Println("array before ", l.data)
-	value := 2
+	value := 8
 	l.removeElement(value)
 	fmt.Println("array after", l.data)
 }

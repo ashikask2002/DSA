@@ -65,7 +65,7 @@ func swap(arr []int, a int, b int) {
 	arr[a], arr[b] = arr[b], arr[a]
 }
 
-func display(arr []int) {
+func display(arr []int)	 {
 	for _, v := range arr {
 
 		fmt.Print(v, " ")

@@ -18,6 +18,9 @@ func Selectionsort(arr []int,n int)[]int{
 			if arr[j]<arr[min]{
 				min = j
 			}
+			
+		}
+		if min != i{
 			arr[i],arr[min] = arr[min],arr[i]
 		}
 		

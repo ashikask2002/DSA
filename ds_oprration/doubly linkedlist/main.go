@@ -21,14 +21,14 @@ list.adddll(3)
 list.adddll(8)
 list.adddll(2)
 
-list.deletehead()
-list.deleteend()
+// list.deletehead()
+// list.deleteend()
 list.display()
 
 }
 
-func (l *DoublyLinkedList) adddll(data int) {
-	node := &Node{data, nil, nil}
+func(l *DoublyLinkedList) adddll(data int){
+	node := &Node{data,nil,nil}
 
 	if l.head == nil {
 		l.head = node
@@ -38,6 +38,8 @@ func (l *DoublyLinkedList) adddll(data int) {
 		l.tail.next = node
 		l.tail = node
 	}
+    
+
 }
 
 func (l *DoublyLinkedList) display() {

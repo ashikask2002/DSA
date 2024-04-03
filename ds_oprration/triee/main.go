@@ -29,15 +29,15 @@ func (t *trie) Insert(value string) {
 
 func (t *trie) Search(value string) bool {
 	n := len(value)
-	current := t.root
+	currentnode := t.root
 	for i := 0; i < n; i++ {
 		curnInds := value[i] - 'a'
-		if current.children[curnInds] == nil {
+		if currentnode.children[curnInds] == nil {
 			return false
 		}
-		current = current.children[curnInds]
+		currentnode = currentnode.children[curnInds]
 	}
-	if current.isend == true {
+	if currentnode.isend == true {
 		return true
 	}
 	return false
@@ -49,6 +49,7 @@ func main() {
 		"ashik",
 		"ashi",
 		"ash",
+		"sdj",
 	}
 	for _, val := range toAdd {
 		t.Insert(val)

@@ -101,7 +101,7 @@ func (t *treenode) validatehelper(MinInt, MaxInt int) bool {
 		return false
 	}
 
-	return t.Left.validatehelper(MinInt, t.value) && t.Right.validatehelper(t.value,MaxInt)
+	return t.Left.validatehelper(MinInt, t.value) && t.Right.validatehelper(t.value, MaxInt)
 }
 
 func (t *treenode) DisplayIn() {
@@ -114,13 +114,11 @@ func (t *treenode) DisplayIn() {
 
 func main() {
 	root := &treenode{value: 10}
-	root.Insert(4)
-	root.Insert(2)
-	root.Insert(8)
-	root.Insert(1)
 	root.Insert(5)
-	root.Insert(2)
+	root.Insert(4)
 	root.Insert(7)
+	root.Insert(9)
+	root.Insert(2)
 
 	root.DisplayIn()
 
@@ -131,10 +129,10 @@ func main() {
 
 	fmt.Println("min", minvalue(root))
 	fmt.Println()
-    
+
 	target := 9
 	closest := root.findclosest(target)
-	fmt.Println("closest value is ",closest)
+	fmt.Println("closest value is ", closest)
 
-	fmt.Println("is the tree is validater ",root.validate() )
+	fmt.Println("is the tree is validater ", root.validate())
 }

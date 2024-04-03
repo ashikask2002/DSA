@@ -2,45 +2,55 @@ package main
 
 import "fmt"
 
-type Stack struct {
-	data []int
-	size int
+type treenod struct {
+	data        int
+	Left, Right *treenod
+}
+
+func (t *treenod) Insert(data int) *treenod {
+	if t == nil {
+		return &treenod{data: data}
+	}
+	if data < t.data {
+		t.Left = t.Left.Insert(data)
+	} else {
+		t.Right = t.Right.Insert(data)
+	}
+	return t
+}
+
+func (t *treenod) Search(data int) bool {
+	if t == nil {
+		return false
+	}
+	if data == t.data {
+		return true
+	} else if data < t.data {
+		return t.Left.Search(data)
+	} else {
+		return t.Right.Search(data)
+	}
+}
+
+func (t *treenod) DisplayIn() {
+	if t != nil {
+		t.Left.DisplayIn()
+		fmt.Print(" ", t.data)
+		t.Right.DisplayIn()
+	}
 }
 
 func main() {
-	l := &Stack{}
-	l.Push(4)
-	l.Push(1)
-	l.Push(5)
-	l.Push(2)
-	l.Push(9)
-	fmt.Println("array before", l.data)
-	middleIndex := l.size / 2
-	currentIndex := 0
-	l.Removemiddle(middleIndex, currentIndex)
-	fmt.Println("array after",l.data)
-}
+	l := &treenod{data: 10}
+	l.Insert(4)
+	l.Insert(7)
+	l.Insert(9)
+	l.Insert(2)
+	l.Insert(10)
+	l.Insert(101)
 
-func (s *Stack) Push(a int) {
-	s.data = append(s.data, a)
-	s.size++
-}
-
-func (s *Stack) Pop() int {
-	n := len(s.data) - 1
-	toremove := s.data[n]
-	s.data = s.data[:n]
-	return toremove
-}
-
-func (s *Stack) Removemiddle(middleIndex int, currentIndex int) int {
-	if middleIndex == currentIndex {
-		return s.Pop()
-	}
-	temp := s.Pop()
-	mid := s.Removemiddle(middleIndex, currentIndex+1)
-	s.Push(temp)
-
-	return mid
-
+	l.DisplayIn()
+	Searchvalue := 101
+	fmt.Println("result of seardh is")
+	fmt.Println(l.Search(Searchvalue))
 }

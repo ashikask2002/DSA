@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	arr := []int{5, 1, 7, 2, 9, 4}
+	arr := []int{3, 2, 6, 5, 1, 8}
 	fmt.Println("array before sorting",arr)
 	start := 0
 	end := len(arr) - 1

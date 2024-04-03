@@ -3,15 +3,15 @@ package main
 import "fmt"
 
 func main() {
-	value := 6
+	value := 5
 	result := Recursion(value)
-	fmt.Printf("value is %d", result)
-
+	fmt.Println("factorial is ", result)
 }
 
 func Recursion(value int) int {
-	if value == 0 {
+	if value <= 1 {
 		return 1
 	}
+
 	return value * Recursion(value-1)
 }
